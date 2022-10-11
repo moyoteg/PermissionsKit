@@ -47,10 +47,8 @@ class LocationAlwaysHandler: NSObject, CLLocationManagerDelegate {
     
     func requestPermission(_ completionHandler: @escaping () -> Void) {
         self.completionHandler = completionHandler
-        
-        let status = CLLocationManager.authorizationStatus()
-        
-        switch status {
+                
+        switch locationManager.authorizationStatus {
         case .notDetermined:
             locationManager.delegate = self
             locationManager.requestAlwaysAuthorization()

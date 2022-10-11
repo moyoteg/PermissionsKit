@@ -22,9 +22,9 @@
 import Foundation
 import MapKit
 
-extension CLLocationManager {
+public extension CLLocationManager {
     
-    open func setAccuracy(_ value: LocationAccuracy) {
+    func setAccuracy(_ value: LocationAccuracy) {
         desiredAccuracy = value.coreLocationAccuracy
     }
 }
