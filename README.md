@@ -24,9 +24,6 @@ Universal API for request permission and get its statuses. Available `.authorize
 ### Community
 
 <p float="left">
-    <a href="https://discord.gg/BfZQUG6pnh">
-        <img src="https://cdn.sparrowcode.io/github/badges/discord.png?version=2" height="52">
-    </a>
     <a href="#apps-using">
         <img src="https://cdn.sparrowcode.io/github/badges/download-on-the-appstore.png?version=2" height="52">
     </a>
@@ -46,7 +43,6 @@ Universal API for request permission and get its statuses. Available `.authorize
     - [Status Permission](#status-permission)
 - [Keys in Info.plist](#keys-in-infoplist)
     - [Localisations](#localisation)
-- [Apple Review](#apple-review)
 - [Apps Using](#apps-using)
 
 ### Permissions
@@ -73,7 +69,7 @@ Universal API for request permission and get its statuses. Available `.authorize
 
 ## Installation
 
-Ready to use on iOS 11+. Supports iOS, tvOS, and `SwiftUI`.
+Ready to use on iOS 11+. Supports iOS, tvOS and `SwiftUI`.
 
 ### Swift Package Manager
 
@@ -156,7 +152,8 @@ You need to add some keys to the `Info.plist` file with descriptions, per Apple'
 let key = Permission.bluetooth.usageDescriptionKey
 ```
 
-Do not use the description as the name of the key.
+> **Warning**
+> Do not use the description as the name of the key.
 
 ### Localisation
 
@@ -166,31 +163,19 @@ If you use xliff localization export, keys will be create automatically. If you 
 "NSCameraUsageDescription" = "Here description of usage camera";
 ```
 
-## Apple Review
-
-Apple changed its review guidelines in June 2021. When requesting permissions, apps should require users to always request and make a decision whether to allow or decline the permission. For this reason, the close button in `PermissionsKit` is hidden by default. If you want to force show the close button, run the following code:
-
-```swift
-// Show & hide close button
-controller.showCloseButton = true
-
-// Enable or Disable drag intercation
-controller.allowSwipeDismiss = true
-```
-
-Also changed the title for the button. Instead of  `allow` now use `continue`. The Apple Review Team asked for this. For details, check out [this issue](https://github.com/sparrowcode/PermissionsKit/issues/229).
-
 ## Apps Using
 
 <p float="left">
-    <a href="https://apps.apple.com/app/id1487937127"><img src="https://cdn.sparrowcode.io/github/apps-using/craft.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1624477055"><img src="https://cdn.sparrowcode.io/github/apps-using/seqvoia.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id875280793"><img src="https://cdn.sparrowcode.io/github/apps-using/salat.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id743843090"><img src="https://cdn.sparrowcode.io/github/apps-using/athan.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id537070378"><img src="https://cdn.sparrowcode.io/github/apps-using/quran.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1570676244"><img src="https://cdn.sparrowcode.io/github/apps-using/debts.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1617055933"><img src="https://cdn.sparrowcode.io/github/apps-using/arabesque-kitchen.png?version=2" height="65"></a>
-    <a href="https://apps.apple.com/app/id1596657751"><img src="https://cdn.sparrowcode.io/github/apps-using/run-tracker.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1487937127"><img src="https://cdn.sparrowcode.io/github/apps-using/id1487937127.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1624477055"><img src="https://cdn.sparrowcode.io/github/apps-using/id1624477055.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1625641322"><img src="https://cdn.sparrowcode.io/github/apps-using/id1625641322.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id875280793"><img src="https://cdn.sparrowcode.io/github/apps-using/id875280793.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id743843090"><img src="https://cdn.sparrowcode.io/github/apps-using/id743843090.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id537070378"><img src="https://cdn.sparrowcode.io/github/apps-using/id537070378.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1570676244"><img src="https://cdn.sparrowcode.io/github/apps-using/id1570676244.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1617055933"><img src="https://cdn.sparrowcode.io/github/apps-using/id1617055933.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1596657751"><img src="https://cdn.sparrowcode.io/github/apps-using/id1596657751.png?version=2" height="65"></a>
+    <a href="https://apps.apple.com/app/id1459483980"><img src="https://cdn.sparrowcode.io/github/apps-using/id1459483980.png?version=2" height="65"></a>
 </p>
 
 If you use a `PermissionsKit`, add your application via Pull Request.
