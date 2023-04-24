@@ -48,15 +48,16 @@ open class Permission: Equatable {
      For most permissions its app page in settings app.
      You can overide it if your permission need open custom page.
      */
-    @available(iOSApplicationExtension, unavailable)
-    open func openSettingPage() {
-        DispatchQueue.main.async {
-            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
-            if UIApplication.shared.canOpenURL(settingsUrl) {
-                UIApplication.shared.open(settingsUrl, completionHandler: nil)
+#if os(macOS)
+        open func openSettingPage() {
+            DispatchQueue.main.async {
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: nil)
+                }
             }
         }
-    }
+#endif
     
     // MARK: Must Ovveride
     

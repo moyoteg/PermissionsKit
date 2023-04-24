@@ -23,7 +23,7 @@
 import PermissionsKit
 #endif
 
-#if PERMISSIONSKIT_PHOTOLIBRARY
+#if PERMISSIONSKIT_PHOTOLIBRARY && !os(watchOS)
 import Photos
 
 public extension Permission {

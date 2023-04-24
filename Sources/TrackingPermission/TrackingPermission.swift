@@ -23,7 +23,7 @@
 import PermissionsKit
 #endif
 
-#if PERMISSIONSKIT_TRACKING
+#if PERMISSIONSKIT_TRACKING && !os(watchOS)
 import AppTrackingTransparency
 
 @available(iOS 14.5, tvOS 14.5, *)
