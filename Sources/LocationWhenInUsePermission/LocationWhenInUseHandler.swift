@@ -34,7 +34,7 @@ class LocationWhenInUseHandler: NSObject, CLLocationManagerDelegate {
     
     lazy var locationManager = CLLocationManager()
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    func locationManager(_ locationManager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .notDetermined {
             return
         }

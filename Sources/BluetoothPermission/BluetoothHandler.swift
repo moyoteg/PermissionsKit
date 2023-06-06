@@ -37,11 +37,11 @@ class BluetoothHandler: NSObject, CBCentralManagerDelegate {
     
     // MARK: - Manager
     
-    var manager: CBCentralManager?
+    var locationManager: CBCentralManager?
     
     func reqeustUpdate() {
-        if manager == nil {
-            self.manager = CBCentralManager(delegate: self, queue: nil, options: [:])
+        if locationManager == nil {
+            self.locationManager = CBCentralManager(delegate: self, queue: nil, options: [:])
         } else {
             completion()
         }

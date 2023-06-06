@@ -50,12 +50,12 @@ public class MotionPermission: Permission {
     }
     
     public override func request(completion: @escaping () -> Void) {
-        let manager = CMMotionActivityManager()
+        let locationManager = CMMotionActivityManager()
         let today = Date()
         
-        manager.queryActivityStarting(from: today, to: today, to: OperationQueue.main, withHandler: { (activities: [CMMotionActivity]?, error: Error?) -> () in
+        locationManager.queryActivityStarting(from: today, to: today, to: OperationQueue.main, withHandler: { (activities: [CMMotionActivity]?, error: Error?) -> () in
             completion()
-            manager.stopActivityUpdates()
+            locationManager.stopActivityUpdates()
         })
     }
 }
