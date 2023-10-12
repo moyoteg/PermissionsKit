@@ -19,7 +19,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+#if os(iOS)
 import UIKit
+#else
+import Cocoa
+import AppKit
+#endif
 
 open class Permission: Equatable {
     
@@ -48,15 +53,27 @@ open class Permission: Equatable {
      For most permissions its app page in settings app.
      You can overide it if your permission need open custom page.
      */
-#if os(macOS)
-        open func openSettingPage() {
-            DispatchQueue.main.async {
-                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
-                if UIApplication.shared.canOpenURL(settingsUrl) {
-                    UIApplication.shared.open(settingsUrl, completionHandler: nil)
+#if os(iOS)
+    open func openSettingPage() {
+        DispatchQueue.main.async {
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: nil)
+            }
+        }
+    }
+#elseif os(macOS)
+    open func openSettingPage() {
+        DispatchQueue.main.async {
+            if let settingsUrl = URL(string: "x-apple.systempreferences:com.apple.preference") {
+                if NSWorkspace.shared.open(settingsUrl) {
+                    // Successfully opened the settings
+                } else {
+                    // Failed to open the settings
                 }
             }
         }
+    }
 #endif
     
     // MARK: Must Ovveride
