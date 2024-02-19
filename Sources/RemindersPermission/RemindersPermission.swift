@@ -45,6 +45,8 @@ public class RemindersPermission: Permission {
         case .denied: return .denied
         case .notDetermined: return .notDetermined
         case .restricted: return .denied
+        case .fullAccess: return .fullAccess
+        case .writeOnly: return .writeOnly
         @unknown default: return .denied
         }
     }

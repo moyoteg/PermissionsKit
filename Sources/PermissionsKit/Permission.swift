@@ -110,6 +110,8 @@ open class Permission: Equatable {
         case denied
         case notDetermined
         case notSupported
+        case fullAccess
+        case writeOnly
         
         public var description: String {
             switch self {
@@ -117,6 +119,8 @@ open class Permission: Equatable {
             case .denied: return "denied"
             case .notDetermined: return "not determined"
             case .notSupported: return "not supported"
+            case .fullAccess: return "full access"
+            case .writeOnly: return "write only"
             }
         }
     }
