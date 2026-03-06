@@ -6,10 +6,10 @@ let package = Package(
     name: "PermissionsKit",
     defaultLocalization: "en",
     platforms: [
-        .iOS("15"),
-        .macOS("14"),
-        .tvOS("15"),
-        .watchOS(.v7),
+        .iOS("17"),
+        .macOS("14.4"),
+        .tvOS("17"),
+        .watchOS("9"),
     ],
     products: [
         .library(
